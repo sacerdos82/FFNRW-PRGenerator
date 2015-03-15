@@ -13,7 +13,7 @@ function initModule($action, $data) {
 	
 	
 	// Modultitel
-	$smarty->assign('title', 'VfN NRW | Nachbarschaftsbrief generieren');
+	$smarty->assign('title', 'VfN NRW | Tischaufsteller generieren');
 	
 	$smarty->assign('instructions', 'Du kannst in jedem Feld durch die Verwendung von "&lt;br&gt;" mehrere Zeilen erzeugen.');
 	
