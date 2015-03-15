@@ -1,0 +1,76 @@
+body {
+	font-family: 'DejaVuSans';
+}
+
+.bold {
+	font-weight: bold;
+}
+
+
+#tabledisplay-target-community-ssid {
+	font-size: 10pt;
+	font-weight: bold;
+	text-align: center;
+	
+	position: absolute;
+	bottom: 10mm;
+	left: 15.5mm;
+	width: 60mm;
+	height: 15mm;
+	overflow: hidden; 
+}
+
+
+#tabledisplay-information {
+	font-size: 10pt;
+	line-height: 20pt;
+	text-align: center;
+	
+	position: absolute;
+	top: 30mm;
+	left: 195mm;
+	width: 60mm;
+	height: 15mm;
+	overflow: hidden;
+}
+
+
+#tabledisplay-community {
+	font-size: 10pt;
+	line-height: 16pt;
+	text-align: center;
+	
+	position: absolute;
+	top: 55mm;
+	left: 195mm;
+	width: 60mm;
+	height: 35mm;
+	overflow: hidden;
+}
+
+	p.tabledisplay-community {
+		padding-bottom: 3mm;
+	}
+	
+	
+#tabledisplay-owner {
+	font-size: 10pt;
+	line-height: 16pt;
+	text-align: center;
+	
+	position: absolute;
+	top: 125mm;
+	left: 105mm;
+	width: 60mm;
+	height: 65mm;
+	overflow: hidden;
+}
+
+	p.tabledisplay-owner {
+		padding-bottom: 4mm;
+	}
+	
+	#tabledisplay-target-owner-name {
+		font-size: 12pt;
+		line-height: 18pt;
+	}

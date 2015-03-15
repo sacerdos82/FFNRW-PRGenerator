@@ -1,0 +1,285 @@
+/* Fonts */
+
+@font-face { 
+	font-family: "DejaVuSans"; 
+	src: url('../../../tools-external/mpdf60/ttfonts/DejaVuSans.ttf'); 
+}
+
+@font-face { 
+	font-family: "DejaVuSans-Bold"; 
+	src: url('../../../tools-external/mpdf60/ttfonts/DejaVuSans-Bold.ttf'); 
+}
+
+
+/* TAGs */
+
+body { }
+
+
+/* Header Nofication */
+
+#target-headerNotification {
+	background-color: #ee6ba9;
+	position: fixed;
+	top: 0;
+	left: 0;
+	padding: 15px;
+	background-color: #ee6ba9;
+	font-weight: 700;
+	text-align: center;
+	box-shadow: 0 2px 30px rgba(0, 0, 0, 0.75);
+	color: #272622;
+	z-index: 99999;
+	opacity: 0.95;
+
+}
+
+
+
+/* Window Lock */
+
+#windowLock {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: #272622;
+	color: #FFFDF6;
+	z-index: 999999;
+	padding: 100px 50px 0 50px;
+	text-align: center;
+	font-size: 16px;
+	line-height: 24px;
+	display: none;
+	overflow: scroll;
+}
+
+
+
+/* Header */
+
+header {
+	background-color: #dc0068;
+	border-top: 10px solid #ffb400; 
+	padding: 10px 0px;
+	margin: 0;
+	font-size: 16px;
+	color: #fff;
+	width: 100%;
+}
+
+	header a,
+	header a:visited {
+		color: #fff;
+	}
+	
+	header a:hover,
+	header a:focus {
+		color: #009ee0;
+		text-decoration: none;
+	}
+
+	#header-left h1 {
+		font-size: 16px;
+		line-height: 28px;
+		padding: 0;
+		margin: 0;
+	}
+	
+	#header-middle { }
+	
+		#header-middle a,
+		#header-middle a:visited {
+			color: #000;
+		}
+	
+		#header-middle a:hover,
+		#header-middle a:focus {
+			color: #009ee0;
+			text-decoration: none;
+		}
+	
+	#header-right {
+		text-align: right;
+		display: table-cell;
+		vertical-align: middle;
+		z-index: 99999;
+	}
+
+
+
+/* Content */
+
+#content {
+	background-color: #fff;
+}
+
+	#sidebar {
+		background-color: #6cc8f0;
+		float: left;
+		width: 285px;
+		padding: 10px 5px 10px 10px;
+		overflow: hidden;
+	}
+	
+		#sidebar-inner {
+			margin-right: 5px;
+		}
+	
+	#canvas {
+		position: relative;
+		background-color: #ddd;
+		float: right;
+		overflow: scroll;
+	}
+	
+		#trigger-render {
+			position: fixed;
+			top: 80px;
+			right: 0px;
+			width: 70px;
+			font-size: 32px;
+			background-color: rgba(0, 0, 0, 0.75);
+			color: #fff;
+			padding: 15px 0;
+			text-align: center;
+			z-index: 9999;
+		}
+		
+		#trigger-render:hover {
+			background-color: rgba(0, 0, 0, 0.85);
+			cursor: pointer;
+		}
+		
+		#target-download {
+			position: fixed;
+			top: 160px;
+			right: 0px;
+			width: 70px;
+			font-size: 32px;
+			background-color: rgba(0, 0, 0, 0.75);
+			color: #fff;
+			padding: 10px;
+			text-align: center;
+			z-index: 9999;
+			display: none;
+		}
+	
+		#document {
+			position: relative;
+			font-family: 'DejaVuSans';
+			background-color: #fff;
+			margin: 0 auto;
+		}
+			
+			#background-svg {
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			
+			/* neighborhood */
+		
+			#deco-lines-top-top,
+			#deco-lines-bottom-top {
+				position: absolute;
+				background-color: #ffb400;
+			}
+			
+			#deco-lines-top-bottom,
+			#deco-lines-bottom-bottom {
+				position: absolute;
+				background-color: #dc0068;
+			}
+		
+			#logo-freifunk {
+				position: absolute;
+				height: auto;
+			}
+			
+			#document h1 {
+				font-family: 'DejaVuSans-Bold';
+				position: absolute;
+			}
+			
+			#project-infos {
+				position: absolute;
+			}
+			
+			#project-infos p.bold {
+				font-family: 'DejaVuSans-Bold';
+			}
+			
+			#address {
+				position: absolute;
+			}
+			
+			#lettertext {
+				position: absolute;
+			}
+				
+				#target-community-ssid {
+					font-family: 'DejaVuSans-Bold';
+				}
+				
+				
+			/* tabledisplay */
+			
+			textarea#owner-infos {
+				height: 120px;
+			}
+			
+			#tabledisplay-target-community-ssid {
+				font-family: 'DejaVuSans-Bold';
+				position: absolute;
+				text-align: center;
+				overflow: hidden;
+			}
+			
+			#tabledisplay-information {
+				font-family: 'DejaVuSans';
+				position: absolute;
+				text-align: center;
+				overflow: hidden;
+			}
+			
+			#tabledisplay-community {
+				font-family: 'DejaVuSans';
+				position: absolute;
+				text-align: center;
+				overflow: hidden;
+			}
+			
+				#tabledisplay-community p {
+					padding: 0;
+					margin: 0;
+				}
+			
+				#tabledisplay-community p.bold {
+					font-family: 'DejaVuSans-Bold';	
+				}
+				
+			#tabledisplay-owner {
+				font-family: 'DejaVuSans';
+				position: absolute;
+				text-align: center;
+				overflow: hidden;
+			}
+		
+				#tabledisplay-owner p.bold {
+					font-family: 'DejaVuSans-Bold';	
+				}
+
+
+/* Footer */
+
+footer {
+	clear: both;
+	background-color: #dc0068;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 14px;
+	line-height: 20px;
+	color: #fff;
+	width: 100%;
+	z-index: 9999;
+}
