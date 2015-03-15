@@ -15,6 +15,8 @@ $( document ).ready( function() {
 
 	$( '#target-headerNotification' ).hide();
 	
+	$('[data-toggle="tooltip"]').tooltip()
+	
 	drawDisplay();
 	$( window ).resize( function () { drawDisplay(); });
 
