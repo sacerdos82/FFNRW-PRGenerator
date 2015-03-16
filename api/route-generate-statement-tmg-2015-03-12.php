@@ -90,7 +90,7 @@ $api->post('/generate/statement/tmg-2015-03-12', function() use ($api) {
 		
 		<div id="lettertext">
 			
-			<p class="lettertext">'. $receiver_salutation . '<br><br></p>
+			<p class="lettertext">'. $receiver_salutation . ',<br><br></p>
 			
 			<p class="lettertext">'. $content_text .'</p>
 			
