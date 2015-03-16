@@ -1,0 +1,50 @@
+body {
+	font-family: 'DejaVuSans';
+}
+
+.bold {
+	font-weight: bold;
+}
+
+
+#project-infos {
+	font-size: 7pt;
+	line-height: 10pt;
+	
+	position: absolute;
+	top: 99mm;
+	left: 163.5mm;
+	width: 35mm;
+}
+
+p.project-infos {
+	padding-bottom: 5pt;
+}
+
+
+
+#address {
+	font-size: 8pt;
+	line-height: 13pt;
+	
+	position: absolute;
+	top: 50mm;
+	left: 25mm;
+	width: 70mm;
+}
+
+
+
+#lettertext {
+	font-size: 8pt;
+	line-height: 13pt;
+	
+	position: absolute;
+	top: 99mm;
+	left: 25mm;
+	width: 120mm;
+}
+
+p.lettertext {
+	padding-bottom: 10pt;
+}

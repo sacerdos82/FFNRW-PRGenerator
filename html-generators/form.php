@@ -20,7 +20,7 @@ namespace html {
 		} // __construct
 		
 		
-		public function addField($field_type, $field_name, $field_label = '', $field_options = '', $field_cssClass = '', $field_helpText = '', $field_groupCssClass = '') {
+		public function addField($field_type, $field_name, $field_label = '', $field_options = '', $field_cssClass = '', $field_helpText = '', $field_groupCssClass = '', $field_value = '') {
 		
 			$this->fields[] 	= array(	'type'				=> $field_type,
 											'name'				=> $field_name,
@@ -28,7 +28,8 @@ namespace html {
 											'options'			=> $field_options,
 											'cssClass'			=> $field_cssClass,
 											'helpText'			=> $field_helpText,
-											'groupCssClass'		=> $field_groupCssClass
+											'groupCssClass'		=> $field_groupCssClass,
+											'value'				=> $field_value
 										);
 			
 		} // addField
@@ -178,7 +179,7 @@ namespace html {
 													$output .= '<label class="control-label" for="'. $this->name .'-'. $field['name'] .'">'. $field['label'] .'</label>';
 													
 													// Feld erzeugen
-													$field_html = '<textarea class="'. $bootstrap_fieldClass .' '. $field['cssClass'] .'" id="'. $this->name .'-'. $field['name'] .'" name="'. $this->name .'-'. $field['name'] .'"></textarea>';
+													$field_html = '<textarea class="'. $bootstrap_fieldClass .' '. $field['cssClass'] .'" id="'. $this->name .'-'. $field['name'] .'" name="'. $this->name .'-'. $field['name'] .'">'. $field['value'] .'</textarea>';
 													
 													break;
 													

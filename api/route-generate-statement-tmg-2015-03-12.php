@@ -1,21 +1,38 @@
 <?php
 
-$api->post('/generate/neighborhood', function() use ($api) {
+$api->post('/generate/statement/tmg-2015-03-12', function() use ($api) {
 
 	// Globale Variablen einbinden
 	global $apiResponseHeader;
 
 
+
+	// Modul vorerst sperren
+	$apiResponseHeader['error'] = true;
+	$apiResponseHeader['code'] = 'E0003';
+	$apiResponseHeader['message'] = 'Modul noch nicht freigegeben';
+	
+	API_Response(200, '');
+	$api->stop();
+
+
+
 	// Prüfen ob alle für die Operation benötigen Daten vorhanden und nicht leer sind.
-	API_checkRequiredFields(array('sender_receiver', 'sender_name', 'sender_contact1', 'community_name', 'community_ssid' ));
+	API_checkRequiredFields(array('receiver_name', 'receiver_salutation', 'sender_name', 'sender_street', 'sender_city', 'sender_contact1', 'community_name', 'content_text' ));
 
 
 	// erforderliche Variablen laden
-	$sender_receiver		= $api->request->post('sender_receiver');
+	$receiver_name			= $api->request->post('receiver_name');
+	$receiver_salutation	= $api->request->post('receiver_salutation');
+	
 	$sender_name			= $api->request->post('sender_name');
+	$sender_street			= $api->request->post('sender_street');
+	$sender_city			= $api->request->post('sender_city');
 	$sender_contact1		= $api->request->post('sender_contact1');
+	
 	$community_name			= $api->request->post('community_name');
-	$community_ssid			= $api->request->post('community_ssid');
+	
+	$content_text			= $api->request->post('content_text');
 	
 	
 	// optionale Variablen laden
@@ -26,7 +43,7 @@ $api->post('/generate/neighborhood', function() use ($api) {
 	
 	
 	// mPDF initialisieren
-	$style = file_get_contents(__PATH__ . '/templates/letter-a4-neighborhood.css');
+	$style = file_get_contents(__PATH__ . '/templates/letter-a4-statement.css');
 	
 	$html = 
 	
@@ -50,26 +67,39 @@ $api->post('/generate/neighborhood', function() use ($api) {
 			<p class="project-infos bold">Über mich</p>
 			<p class="project-infos">'. $sender_name .'</p>
 			<p class="project-infos">'. $sender_contact1 .'</p>
-			<p class="project-infos">'. $sender_contact2 .'</p>
+			<p class="project-infos">'. $sender_contact2 .'<br><br></p>
+			
+			<p class="project-infos bold">Wichtiger Hinweis</p>
+			<p class="project-infos">
+				Dieser Brief wurde über prgenerator.freifunk-nrw.de erzeugt und legt lediglich meine persönliche Meinung dar.<br>
+				Es handelt sich nicht um ein offizielles Anschreiben des Fördervereins Freie Netzwerke e.V. oder einer anderen Organisation.
+			</p>
 		
 		</div>
 		
 		<div id="address">
 				
-			<p>'. $sender_receiver .'</p>
+			<p>
+				<span class="address-sender">'. $sender_name .' - '. $sender_street .' - '. $sender_city .'</span><br>
+				Deutscher Bundestag<br>
+				Platz der Republik 1<br>
+				11011 Berlin	
+			</p>
 			
 		</div>
 		
 		<div id="lettertext">
 			
-			<p class="lettertext">Hallo,<br><br></p>
+			<p class="lettertext">'. $receiver_salutation . '<br><br></p>
 			
-			<p class="lettertext">Wie ihr vielleicht bereits bemerkt habt, gibt es in unserer Gegend ein neues WLAN, dessen Name "<span class="bold">'. $community_ssid .'</span>" lautet.</p>
-			<p class="lettertext">Ihr dürft gerne euren Computer oder euer Telefon mit diesem Netzwerk verbinden und ins Internet gehen. Freifunk ist ein freies Netzwerk von Menschen und ihren Endgeräten, die mit ihrer Nachbarschaft kommunizieren und ihren Internet-Anschluss teilen möchten.</p>
-			<p class="lettertext">Stellt auch ihr einen Freifunk-Knoten auf und erweitert das Netzwerk, um unsere Nachbarn zu erreichen, die außerhalb der Reichweite meines Knotens liegen. Als sog. Mesh-Netzwerk, kann es immer größer werden und noch mehr Menschen erreichen.Mit der Freifunk-Software lassen sich handelsübliche WLAN-Router zu Freifunk-Knoten umprogrammieren, die sich automatisch zueinander verbinden. Und das verbindet auch die Menschen.</p>
-			<p class="lettertext">Mehr Informationen dazu findet ihr auf der Website. Dort wird alles ausführlich erklärt und es gibt Hinweise zu unseren Treffen. Ein fertiges Gerät, das ihr nur noch an eine Steckdose anschließen müsst, könnt ihr bei mir bekommen. Ein einzelnes Gerät verbraucht um die 7 Watt. Also nicht mehr als mit der Originalsoftware – und auch für Umwelt und kleine Geldbeutel nicht belastend.</p>
-			<p class="lettertext">Meldet euch gerne bei mir, wenn ihr Fragen habt.<br><br></p>
-			<p class="lettertext">Viele Grüße,</p>
+			<p class="lettertext">'. $content_text .'</p>
+			
+			<p>
+				<br>
+				Mit freundlichen Grüßen<br>
+				<br><br>
+				'. $sender_name .'
+			</p>
 		
 		</div>';
 				
@@ -95,7 +125,14 @@ $api->post('/generate/neighborhood', function() use ($api) {
 
 	$mpdf->WriteHTML($style, 1);
 	$mpdf->WriteHTML($html);
-		
+	
+	$pagecount2 = $mpdf->SetSourceFile(__PATH__ . '/templates/attachment-stellungnahme_tmg_stoererhaftung_12315.pdf');
+    for ($i=1; $i<=$pagecount2; $i++) {
+        $templateID2 = $mpdf->ImportPage($i);
+        $mpdf->SetPageTemplate($templateID2);
+        $mpdf->AddPage();
+    }
+	
 	$filename = time() . '_' . randomString(10) . '.pdf';
 	$link = __URL__ . '/cache/documents/'. $filename;
 	$mpdf->Output(__PATH__ . '/cache/documents/'. $filename, 'F');
