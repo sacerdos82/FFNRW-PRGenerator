@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+	{include file="./shared/tpl-metadata.html"}
+
+</head>
+
+<body>
+	
+	{include file="./shared/tpl-header.html"} 	
+
+	<div id="content">
+
+		<div id="sidebar">
+		<div id="sidebar-inner">
+			
+			{$instructions}
+			<br><br>
+
+			{$formReceiver}
+			<br>
+
+			{$formSender}
+			<br>
+			
+			{$formCommunity}
+			<br>
+			
+			{$formOrganisation}
+			<br>
+			
+			{$formContent}
+				
+		</div><!-- #sidebar-inner -->
+		</div><!-- #sidebar -->
+		
+
+
+		<div id="canvas">
+			
+			<div id="trigger-render" data-toggle="tooltip" data-placement="left" title="PDF generieren"><i class="fa fa-print"></i></div>
+			<div id="target-download" data-toggle="tooltip" data-placement="left" title="PDF herunterladen"></div>
+			
+			<div id="document">
+				
+				<div id="background-svg"><img src="{$url}/templates/letter-a4-basic.svg" /></div>
+				
+				<div id="project-infos">
+				
+					<p class="bold">Über das Projekt</p>
+					<p>
+						Unsere Vision ist die Demokratisierung der Kommunikationsmedien durch freie Netzwerke. Die praktische Umsetzung dieser Idee nehmen freifunk-Communities in der ganzen Welt in Angriff.<br>
+						<br>
+					</p>
+					
+					<p class="bold">Unsere Community</p>
+					<p><span id="target-community-name"></span></p>
+					<p><span id="target-community-website"></span></p>
+					<p><span id="target-community-email"></span><br><br></p>
+					
+					<p class="bold">Weitere Informationen</p>
+					<p>freifunk.net</p>
+					<p>freifunkstattangst.de</p>
+					<p><span id="target-organisation-website"></span><br><br></p>
+					
+					<p class="bold">Über mich</p>
+					<p><span id="target-sender-name"></span></p>
+					<p><span id="target-sender-contact1"></span></p>
+					<p><span id="target-sender-contact2"></span><br><br></p>
+				
+					<p class="bold">Wichtiger Hinweis</p>
+					<p>
+						Dieser Brief wurde über prgenerator.freifunk-nrw.de erzeugt und legt lediglich meine persönliche Meinung dar.<br>
+						Es handelt sich nicht um ein offizielles Anschreiben des Fördervereins Freie Netzwerke e.V. oder einer anderen Organisation.
+					</p>
+				
+				</div>
+				
+				<div id="address-sender"><span id="target-sender-name2"></span> - <span id="target-sender-street"></span> - <span id="target-sender-city"></span></div>
+				
+				<div id="address">
+						
+					<p>
+						<span id="target-receiver-name"></span><br>
+						Deutscher Bundestag<br>
+						Platz der Republik 1<br>
+						11011 Berlin	
+					</p>
+					
+					
+				</div>
+				
+				<div id="lettertext">
+					
+					<p><span id="target-receiver-salutation"></span>,<br><br></p>
+					
+					<p id="target-content-text">
+						der kürzlich öffentlich gewordene Entwurf zur Neuregelung des Telemediengesetzes (vom 17.2.2015) der Bundesregierung stellt die Verbreitung digitaler Netzwerke in Deutschland vor große Herausforderungen.<br>
+						<br>
+						Mit diesem Entwurf positioniert sich die Bundesregierung leider klar gegen die Verbreitung digitaler Netzwerke und WLAN-Zugangspunkte zum Internet in Deutschland. Der Förderverein freie Netzwerke e.V. (siehe Anhang) legt in sechs Punkten dar, warum diese Gesetzesänderung weder wünschenswert, noch überhaupt umsetzbar ist und die aktuelle Situation eher verschlechtert als verbessert, sowie zu enormen Kosten für Verwaltung und Wirtschaft führen wird.<br>
+						<br>
+						Meiner Meinung nach kann es sich Deutschland aus ökonomischer wie kultureller Sicht nicht länger leisten noch weiter in Hinblick auf die Verfügbarkeit breitbandiger und neutraler Internetzugänge noch weiter zurück zu fallen.<br>
+						<br>
+						Deutschland hat im Schnitt weniger als 3 frei zugängliche Hotspots pro 10.000 Einwohner. Zum Vergleich: In Schweden sind es 10, in Großbritannien knapp 30, in Südkorea gut 37. Darüber hinaus ist Deutschland eines der ganz wenigen Länder weltweit, dass weiterhin an einer Störerhaftung in WLAN-Netzwerken festhält.<br>
+						<br>
+						Jeder neue Wachstumsmarkt stützt sich auf diese Technologie. Jeder bedeutende Gesellschaftliche Diskurs wird mittlerweile im Internet ausgetragen. Wenn neue Arbeitsplätze und neue Formen des Erwerbs entstehen werden, dann hier.<br>
+						<br>
+						Ich bitte Sie deshalb um Unterstützung und würden mich sehr freuen, wenn Sie die Stellungnahme im Anhang bei der weiteren Arbeit an dem Gesetz beziehungsweise in Gesprächen mit den Parteikollegen berücksichtigen.
+					</p>
+					
+					<p>
+						<br>
+						Mit freundlichen Grüßen<br>
+						<br><br>
+						<span id="target-sender-name3"></span>
+					</p>
+				
+				</div>
+				
+			</div><!-- #document -->
+		
+		</div><!-- #canvas -->
+
+	</div><!-- #content -->
+	
+	{include file="./shared/tpl-footer.html"} 
+
+	{include file="./shared/tpl-javascript.html"} 
+
+</body>
+</html>

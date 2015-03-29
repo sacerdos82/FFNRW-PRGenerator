@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+	{include file="./shared/tpl-metadata.html"}
+
+</head>
+
+<body>
+	
+	{include file="./shared/tpl-header.html"} 	
+
+	<div id="content">
+
+		<div id="sidebar">
+		<div id="sidebar-inner">
+			
+			{$instructions}
+			
+			<br><br>
+
+			{$formSender}
+			
+			<br>
+			
+			{$formCommunity}
+			
+			<br>
+			
+			{$formOrganisation}
+				
+		</div><!-- #sidebar-inner -->
+		</div><!-- #sidebar -->
+		
+
+
+		<div id="canvas">
+			
+			<div id="trigger-render" data-toggle="tooltip" data-placement="left" title="PDF generieren"><i class="fa fa-print"></i></div>
+			<div id="target-download" data-toggle="tooltip" data-placement="left" title="PDF herunterladen"></div>
+			
+			<div id="document">
+				
+				<div id="background-svg"><img src="{$url}/templates/letter-a4-basic.svg" /></div>
+				
+				<div id="project-infos">
+				
+					<p class="bold">Über das Projekt</p>
+					<p>
+						Unsere Vision ist die Demokratisierung der Kommunikationsmedien durch freie Netzwerke. Die praktische Umsetzung dieser Idee nehmen freifunk-Communities in der ganzen Welt in Angriff.<br>
+						<br>
+					</p>
+					
+					<p class="bold">Unsere Community</p>
+					<p><span id="target-community-name"></span></p>
+					<p><span id="target-community-website"></span></p>
+					<p><span id="target-community-email"></span><br><br></p>
+					
+					<p class="bold">Weitere Informationen</p>
+					<p>freifunk.net</p>
+					<p><span id="target-organisation-website"></span><br><br></p>
+					
+					<p class="bold">Über mich</p>
+					<p><span id="target-sender-name"></span></p>
+					<p><span id="target-sender-contact1"></span></p>
+					<p><span id="target-sender-contact2"></span><br></p>
+				
+				</div>
+				
+				<div id="address">
+						
+					<p><span id="target-sender-receiver"></span></p>
+					
+				</div>
+				
+				<div id="lettertext">
+					
+					<p>Hallo,<br><br></p>
+					
+					<p>Wie ihr vielleicht bereits bemerkt habt, gibt es in unserer Gegend ein neues WLAN, dessen Name "<span id="target-community-ssid"></span>" lautet.</p>
+					<p>Ihr dürft gerne euren Computer oder euer Telefon mit diesem Netzwerk verbinden und ins Internet gehen. Freifunk ist ein freies Netzwerk von Menschen und ihren Endgeräten, die mit ihrer Nachbarschaft kommunizieren und ihren Internet-Anschluss teilen möchten.</p>
+					<p>Stellt auch ihr einen Freifunk-Knoten auf und erweitert das Netzwerk, um unsere Nachbarn zu erreichen, die außerhalb der Reichweite meines Knotens liegen. Als sog. Mesh-Netzwerk, kann es immer größer werden und noch mehr Menschen erreichen.Mit der Freifunk-Software lassen sich handelsübliche WLAN-Router zu Freifunk-Knoten umprogrammieren, die sich automatisch zueinander verbinden. Und das verbindet auch die Menschen.</p>
+					<p>Mehr Informationen dazu findet ihr auf der Website. Dort wird alles ausführlich erklärt und es gibt Hinweise zu unseren Treffen. Ein fertiges Gerät, das ihr nur noch an eine Steckdose anschließen müsst, könnt ihr bei mir bekommen. Ein einzelnes Gerät verbraucht um die 7 Watt. Also nicht mehr als mit der Originalsoftware – und auch für Umwelt und kleine Geldbeutel nicht belastend.</p>
+					<p>Meldet euch gerne bei mir, wenn ihr Fragen habt.<br><br></p>
+					<p>Viele Grüße,</p>
+				
+				</div>
+				
+			</div><!-- #document -->
+		
+		</div><!-- #canvas -->
+
+	</div><!-- #content -->
+	
+	{include file="./shared/tpl-footer.html"} 
+
+	{include file="./shared/tpl-javascript.html"} 
+
+</body>
+</html>

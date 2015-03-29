@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+	{include file="./shared/tpl-metadata.html"}
+
+</head>
+
+<body>
+	
+	{include file="./shared/tpl-header.html"} 	
+
+	<div id="content">
+
+		<div id="sidebar">
+		<div id="sidebar-inner">
+
+			{$instructions}
+			<br><br>
+		
+			{$formCommunity}
+			<br>
+			
+			{$formOrganisation}
+			<br>
+			
+			{$formOwner}
+				
+		</div><!-- #sidebar-inner -->
+		</div><!-- #sidebar -->
+		
+
+
+		<div id="canvas">
+			
+			<div id="trigger-render" data-toggle="tooltip" data-placement="left" title="PDF generieren"><i class="fa fa-print"></i></div>
+			<div id="target-download" data-toggle="tooltip" data-placement="left" title="PDF herunterladen"></div>
+			
+			<div id="document">
+				
+				<div id="background-svg"><img src="{$url}/templates/div-a4-tabledisplay.svg" /></div>
+				
+				<div id="tabledisplay-target-community-ssid"></div>
+				
+				<div id="tabledisplay-information">
+				
+					freifunk.net<br>
+					<span id="tabledisplay-target-organisation-website"></span>
+					
+				
+				</div>
+				
+				<div id="tabledisplay-community">
+					
+					<p class="bold">Unsere Community</p>
+					
+					<p id="tabledisplay-target-community-name"></p>				
+					<p id="tabledisplay-target-community-website"></p>
+					<p id="tabledisplay-target-community-email"></p>
+
+				</div>
+				
+				<div id="tabledisplay-owner">
+					
+					<p id="tabledisplay-target-owner-name" class="bold"></p>				
+					<p id="tabledisplay-target-owner-website"></p>
+					<p id="tabledisplay-target-owner-infos"></p>
+
+				</div>
+				
+			</div><!-- #document -->
+			
+		</div><!-- #canvas -->
+
+	</div><!-- #content -->
+	
+	{include file="./shared/tpl-footer.html"} 
+
+	{include file="./shared/tpl-javascript.html"} 
+
+</body>
+</html>

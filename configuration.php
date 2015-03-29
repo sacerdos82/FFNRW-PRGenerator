@@ -1,7 +1,7 @@
 <?php
 	
 // Smarty
-define('THEME_NAME', 		'one');	// Verzeichnisname der verwendeten Theme
+define('THEME_NAME', 		'two');	// Verzeichnisname der verwendeten Theme
 
 global $smarty;
 $smarty = new Smarty();
