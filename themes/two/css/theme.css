@@ -124,27 +124,18 @@ header {
 		color: #009ee0 !important;
 	}
 	
-	#header-middle { }
-	
-		#header-middle a,
-		#header-middle a:visited {
-			color: #000;
-		}
-	
-		#header-middle a:hover,
-		#header-middle a:focus {
-			color: #009ee0;
-			text-decoration: none;
-		}
-	
+	header #switch-module {
+		padding-left: 10px;
+	}
+		
 	#header-right {
 		text-align: right;
 		display: table-cell;
 		vertical-align: middle;
 		z-index: 99999;
 	}
-
-
+	
+		
 
 /* Content */
 
