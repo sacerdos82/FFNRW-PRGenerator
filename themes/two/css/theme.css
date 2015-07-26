@@ -208,6 +208,10 @@ header {
 			}
 			
 			/* neighborhood */
+			
+			#content-content {
+				height: 300px;
+			}
 		
 			#deco-lines-top-top,
 			#deco-lines-bottom-top {

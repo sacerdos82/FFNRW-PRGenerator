@@ -19,6 +19,8 @@ $( document ).ready( function() {
 	
 	$( '#organisation-website' ).bind('input', function() { $( '#target-organisation-website' ).html( this.value ); });
 	
+	$( '#content-content' ).bind('input', function() { $( '#target-content-content' ).html( this.value ); });
+	
 	
 	$( '#trigger-render' ).click( function() { renderNeighborhood(); });
 
@@ -84,6 +86,7 @@ function renderNeighborhood() {
 	var community_email			= $( 'input[name="community-email"]' ).val();
 	var community_ssid			= $( 'input[name="community-ssid"]' ).val();
 	var organisation_website	= $( 'input[name="organisation-website"]' ).val();
+	var content_content			= $( 'textarea[name="content-content"]' ).val();
 	
 	var addRequest = $.ajax({
 			
@@ -101,7 +104,8 @@ function renderNeighborhood() {
 			"community_website":	community_website,
 			"community_email":		community_email,
 			"community_ssid":		community_ssid,
-			"organisation_website":	organisation_website
+			"organisation_website":	organisation_website,
+			"content_content":		content_content,
 		},
 		dataType: "json"
 		

@@ -7,7 +7,7 @@ $api->post('/generate/neighborhood', function() use ($api) {
 
 
 	// Prüfen ob alle für die Operation benötigen Daten vorhanden und nicht leer sind.
-	API_checkRequiredFields(array('sender_receiver', 'sender_name', 'sender_contact1', 'community_name', 'community_ssid' ));
+	API_checkRequiredFields(array('sender_receiver', 'sender_name', 'sender_contact1', 'community_name', 'community_ssid', 'content_content'));
 
 
 	// erforderliche Variablen laden
@@ -16,6 +16,7 @@ $api->post('/generate/neighborhood', function() use ($api) {
 	$sender_contact1		= $api->request->post('sender_contact1');
 	$community_name			= $api->request->post('community_name');
 	$community_ssid			= $api->request->post('community_ssid');
+	$content_content		= $api->request->post('content_content');
 	
 	
 	// optionale Variablen laden
@@ -41,7 +42,8 @@ $api->post('/generate/neighborhood', function() use ($api) {
 			<p class="project-infos bold">Unsere Community</p>
 			<p class="project-infos">'. $community_name .'</p>
 			<p class="project-infos">'. $community_website .'</p>
-			<p class="project-infos">'. $community_email .'<br><br></p>
+			<p class="project-infos">'. $community_email .'</p>
+			<p class="project-infos">'. $community_ssid .'<br><br></p>
 			
 			<p class="project-infos bold">Weitere Informationen</p>
 			<p class="project-infos">freifunk.net</p>
@@ -60,18 +62,7 @@ $api->post('/generate/neighborhood', function() use ($api) {
 			
 		</div>
 		
-		<div id="lettertext">
-			
-			<p class="lettertext">Hallo,<br><br></p>
-			
-			<p class="lettertext">Wie ihr vielleicht bereits bemerkt habt, gibt es in unserer Gegend ein neues WLAN, dessen Name "<span class="bold">'. $community_ssid .'</span>" lautet.</p>
-			<p class="lettertext">Ihr dürft gerne euren Computer oder euer Telefon mit diesem Netzwerk verbinden und ins Internet gehen. Freifunk ist ein freies Netzwerk von Menschen und ihren Endgeräten, die mit ihrer Nachbarschaft kommunizieren und ihren Internet-Anschluss teilen möchten.</p>
-			<p class="lettertext">Stellt auch ihr einen Freifunk-Knoten auf und erweitert das Netzwerk, um unsere Nachbarn zu erreichen, die außerhalb der Reichweite meines Knotens liegen. Als sog. Mesh-Netzwerk, kann es immer größer werden und noch mehr Menschen erreichen.Mit der Freifunk-Software lassen sich handelsübliche WLAN-Router zu Freifunk-Knoten umprogrammieren, die sich automatisch zueinander verbinden. Und das verbindet auch die Menschen.</p>
-			<p class="lettertext">Mehr Informationen dazu findet ihr auf der Website. Dort wird alles ausführlich erklärt und es gibt Hinweise zu unseren Treffen. Ein fertiges Gerät, das ihr nur noch an eine Steckdose anschließen müsst, könnt ihr bei mir bekommen. Ein einzelnes Gerät verbraucht um die 7 Watt. Also nicht mehr als mit der Originalsoftware – und auch für Umwelt und kleine Geldbeutel nicht belastend.</p>
-			<p class="lettertext">Meldet euch gerne bei mir, wenn ihr Fragen habt.<br><br></p>
-			<p class="lettertext">Viele Grüße,</p>
-		
-		</div>';
+		<div id="lettertext">'. $content_content .'</div>';
 				
 	
 	$mpdf=new mPDF(	'',    // mode - default ''
