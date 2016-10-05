@@ -1,7 +1,3 @@
-// Cookies auslesen
-var url 	= $.cookie( 'vfnnrw-prgenerator-url' );
-
-
 $( document ).ready( function() { 
 
 	drawTabledisplay();

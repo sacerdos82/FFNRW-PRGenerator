@@ -1,8 +1,3 @@
-// Cookies auslesen
-var url 	= $.cookie( 'vfnnrw-prgenerator-url' );
-
-
-
 // Allgemeine Rückgaben im Kopfbereich
 function headerNotification( value ) { $( '#target-headerNotification' ).slideDown( 200 ).html( value ).delay( 2000 ).slideUp( 500 ); }
 function headerNotification_ON( value ) { $( '#target-headerNotification' ).slideDown( 200 ).html( value ); }
